@@ -1,5 +1,6 @@
-package com.example.rabbitmqdemo;
+package com.example.rabbitmqdemo.controller;
 
+import com.example.rabbitmqdemo.service.MessageProducer;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

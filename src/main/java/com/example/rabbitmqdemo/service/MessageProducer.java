@@ -1,5 +1,6 @@
-package com.example.rabbitmqdemo;
+package com.example.rabbitmqdemo.service;
 
+import com.example.rabbitmqdemo.configration.RabbitMqConfig;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 

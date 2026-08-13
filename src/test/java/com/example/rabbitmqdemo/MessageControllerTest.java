@@ -1,5 +1,7 @@
 package com.example.rabbitmqdemo;
 
+import com.example.rabbitmqdemo.controller.MessageController;
+import com.example.rabbitmqdemo.service.MessageProducer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
