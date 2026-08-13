@@ -18,7 +18,7 @@ public class MessageConsumer {
 //    public void receive(String message) {
 //        log.info("received message: {}", message);
 //    }
-@RabbitListener(bindings = @QueueBinding(value=@Queue(name=RabbitMqConfig.QUEUE_NAME),exchange = =@Exchange(name="demo.exchange",type="ExchangeTypes.DIRECT")))
+@RabbitListener(bindings = @QueueBinding(value=@Queue(name=RabbitMqConfig.QUEUE_NAME),exchange =@Exchange(name="demo.exchange",type="ExchangeTypes.DIRECT")))
 public void receive(String message) {
     log.info("received message: {}", message);
 }
