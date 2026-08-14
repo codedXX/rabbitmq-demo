@@ -19,12 +19,13 @@ public class MessageConsumer {
     // @RabbitListener 会创建后台监听容器，应用启动后自动监听队列。
     // bindings 会声明队列、交换机以及交换机到队列的绑定关系。
     @RabbitListener(bindings = @QueueBinding(
-            // 声明并监听 demo.queue 队列。
-            value = @Queue(name = RabbitMqConfig.QUEUE_NAME),
-            // 声明一个 Direct 类型的 demo.exchange 交换机。
+            // 显式声明并监听持久化队列；RabbitMQ 重启后队列定义仍会保留。
+            value = @Queue(name = RabbitMqConfig.QUEUE_NAME, durable = "true"),
+            // 显式声明持久化 Direct 交换机；RabbitMQ 重启后交换机定义仍会保留。
             exchange = @Exchange(
                     name = RabbitMqConfig.EXCHANGE_NAME,
-                    type = ExchangeTypes.DIRECT
+                    type = ExchangeTypes.DIRECT,
+                    durable = "true"
             ),
             // 只有路由键为 demo 的消息才会路由到 demo.queue。
             key = RabbitMqConfig.ROUTING_KEY
