@@ -2,10 +2,12 @@ package com.example.rabbitmqdemo.configration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.boot.autoconfigure.amqp.RabbitTemplateCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 
 @Configuration
 public class RabbitMqConfig {
@@ -51,5 +53,10 @@ public class RabbitMqConfig {
                     returned.getReplyText()
             ));
         };
+    }
+
+    @Bean
+    public Queue simpleQueue(){
+        return new Queue("simple.queue", true);
     }
 }

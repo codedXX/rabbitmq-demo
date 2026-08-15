@@ -36,4 +36,8 @@ public class MessageProducer {
                 correlationData
         );
     }
+
+    public void sendToSimpleQueue(String message) {
+        rabbitTemplate.convertAndSend("", "simple.queue", message);
+    }
 }

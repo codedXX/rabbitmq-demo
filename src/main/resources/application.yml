@@ -31,3 +31,6 @@ spring:
         multiplier: 1
         # 总尝试次数，包括第一次发送，不是额外重试次数。
         max-attempts: 3
+    listener:
+      simple:
+        acknowledge-mode:  manual # 不做处理

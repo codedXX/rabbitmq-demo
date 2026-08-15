@@ -20,4 +20,10 @@ public class MessageController {
         messageProducer.send(message);
         return "sent: " + message;
     }
+
+    @PostMapping(value = "/simple-messages", consumes = MediaType.TEXT_PLAIN_VALUE)
+    public String sendToSimpleQueue(@RequestBody String message) {
+        messageProducer.sendToSimpleQueue(message);
+        return "sent: " + message;
+    }
 }
